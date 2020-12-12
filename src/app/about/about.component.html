@@ -1,0 +1,47 @@
+<form *ngIf="user"  [formGroup]="user">
+    <div>
+         <label>Имя</label>
+         <input formControlName="name" />
+     </div>
+     <div>
+         <label>Email</label>
+         <input formControlName="email" />
+        <div class="alert alert-danger"
+             *ngIf="user.controls['email'].invalid && user.controls['email'].touched">
+             Заполните поле
+         </div>
+     </div>
+    <div>
+         <label>Улица</label>
+         <input formControlName="street" />
+     </div>
+     <div>
+         <label>Адрес</label>
+         <input formControlName="suite" />
+     </div>
+     <div>
+         <label>Город</label>
+         <input formControlName="city" />
+     </div>
+     <div>
+         <label>Индекс</label>
+         <input formControlName="zipcode" />
+     </div>
+     <div>
+         <label>Телефон</label>
+         <input formControlName="phone" />
+     </div>
+     <div>
+         <label>Сайт</label>
+         <input formControlName="website" />
+     </div>
+     <div>
+         <label>Компания</label>
+         <input formControlName="company" />
+     </div>
+ 
+     <pre>
+         {{user.value | json}}
+     </pre>
+     
+ </form>
